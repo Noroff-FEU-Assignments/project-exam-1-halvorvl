@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <main class="contact">
+      <h1>Contact Us</h1>
+      <section class="contact_info">
+        <p>Let`s connect</p>
+        <i class="fa-solid fa-envelope"></i>
+        <p>test@rainydays.com</p>
+        <i class="fa-solid fa-phone"></i>
+        <p>+477 456 789 123</p>
+        <i class="fa-solid fa-location-dot"></i>
+        <p>Cecilia Chapman</p>
+        <p>711-2880 Nulla St.</p>
+        <p>Mankato Mississippi 96522</p>
+      </section>
+
+      <section class="contact_form">
+        <form action="confirmation.html" id="contactform" onsubmit="">
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Name" class="form__input" />
+          <div class="error-message" id="fullNameError">
+            Full name is required
+          </div>
+          <label for="email">E-mail</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="E-mail"
+            class="form__input"
+          />
+          <div class="error-message" id="emailError">Email is required</div>
+          <label for="tel">Phone number (+00 45630500)</label>
+          <input
+            type="tel"
+            id="phone"
+            placeholder="Phone number"
+            class="form__input"
+          />
+          <div class="error-message" id="phoneError">
+            Phone number is required
+          </div>
+          <label for="meessage">Message</label>
+          <textarea
+            name="message"
+            id="message"
+            cols="30"
+            rows="10"
+            placeholder="Message"
+            class="form__input"
+          ></textarea>
+
+          <input type="submit" value="Submit" />
+        </form>
+      </section>
+    </main>
+    <script src="js/contact.js"></script>
+  </body>
+</html>
