@@ -17,14 +17,7 @@ nav {
   min-width: 100%;
   display: grid;
   justify-content: flex-end;
-  margin-top: -190px;
-}
-
-main {
-  max-width: 80%;
-  margin-left: 10%;
-  margin-right: 10%;
-  padding: 15px;
+  margin-top: -75px;
 }
 
 .blog_image {
@@ -57,15 +50,19 @@ main {
   justify-content: center;
 }
 
+.container_for_next_prev_buttons {
+  display: flex;
+  max-width: 100%;
+  margin: 5px;
+}
+
 .prev_post,
 .next_post {
-  position: relative;
-  bottom: 500px;
   background-color: transparent;
   color: #bf173e;
   border: none;
-  padding: 10px 20px;
-  font-size: 200px;
+  padding: 10px 0px;
+  font-size: 50px;
   font-weight: bolder;
   cursor: pointer;
 }
@@ -130,6 +127,8 @@ main {
 .sticky_posts {
   display: flex;
   justify-content: space-between;
+  margin: 10px;
+  width: 85%;
 }
 
 .featured_blog_posts {
@@ -137,6 +136,7 @@ main {
   flex-direction: column;
   margin: 10px;
   border: solid 2px;
+  max-width: 30%;
 }
 
 .featured_blog_images {
