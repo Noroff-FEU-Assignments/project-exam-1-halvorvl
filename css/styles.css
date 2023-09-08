@@ -2,8 +2,16 @@ body {
   margin: 0px;
 }
 
-h1 {
+h1,
+h2 {
   text-align: center;
+  font-size: 2em;
+  margin: 5px;
+}
+
+a {
+  color: #025918;
+  text-decoration: none;
 }
 
 header {
@@ -11,13 +19,20 @@ header {
 }
 
 nav {
+  position: relative;
   z-index: 10;
   background-color: #66cdf2;
   min-height: 70px;
   min-width: 100%;
   display: grid;
   justify-content: flex-end;
-  margin-top: -75px;
+  margin-top: -50px;
+}
+
+footer {
+  background-color: #66cdf2;
+  min-height: 80px;
+  margin-top: 20px;
 }
 
 .blog_image {
@@ -50,10 +65,19 @@ nav {
   justify-content: center;
 }
 
+.slider_image {
+  max-width: 100%;
+}
+
+.slider_image_newest {
+  max-width: 100%;
+}
+
 .container_for_next_prev_buttons {
   display: flex;
   max-width: 100%;
   margin: 5px;
+  justify-content: space-evenly;
 }
 
 .prev_post,
@@ -98,6 +122,18 @@ nav {
   margin: 10px 0px 0px 0px;
 }
 
+.aboutus_container_frontpage {
+  display: flex;
+  align-items: center;
+  max-width: 80%;
+  text-align: center;
+  margin-left: 10%;
+}
+
+.aboutus_image_frontpage {
+  max-width: 35%;
+  max-height: 100%;
+}
 /*about us styles*/
 
 .aboutus_container {
@@ -111,6 +147,10 @@ nav {
   margin-right: 10px;
 }
 /*mainblogpage styles*/
+
+.more_posts {
+  display: block;
+}
 
 .all_posts {
   display: grid;

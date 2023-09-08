@@ -1,30 +1,48 @@
-const url = "https://www.reisesakte.no//wp-json/wp/v2/posts?_embed";
+const url = "https://www.reisesakte.no//wp-json/wp/v2/posts?_embed&per_page=20";
 
 const createHtmlHere = document.querySelector(".all_posts");
+const morePostsButton = document.querySelector(".more_posts");
+
+let currentPage = 1;
+const postsPerPage = 10;
 
 async function getBlogPosts() {
   const response = await fetch(url);
 
   const result = await response.json();
 
-  console.log(result);
+  const startIndex = (currentPage - 1) * postsPerPage;
+  const endIndex = startIndex + postsPerPage;
 
-  for (let i = 0; i < result.length; i++) {
-    createHtmlHere.innerHTML += `<div class="single_post">
-
-     <h2> ${result[i].title.rendered} </h2>
+  for (let i = startIndex; i < endIndex && i < result.length; i++) {
+    const post = result[i];
+    const title = post.title.rendered;
+    const excerpt = post.excerpt.rendered;
+    const image = post._embedded["wp:featuredmedia"]["0"].source_url;
+    const postHTML = `<div class="single_post">
+ <a href="blogpost.html?id=${result[i].id}" >
+      <h2> ${title} </h2>
       <img class="blog_image"
-            src="${result[i]._embedded["wp:featuredmedia"]["0"].source_url}"/>
-
-             <p class="exerpt"> ${result[i].excerpt.rendered} </p>
-
-            
-
-      
-
-   
+      src="${image}"/>
+      <p class="exerpt"> ${excerpt} </p>
+       
+      </a>
  </div>`;
+
+    createHtmlHere.insertAdjacentHTML("beforeend", postHTML);
+    console.log(result);
+  }
+
+  if (endIndex < result.length) {
+    morePostsButton.style.display = "block";
+  } else {
+    morePostsButton.style.display = "none";
   }
 }
 
 getBlogPosts();
+
+morePostsButton.addEventListener("click", () => {
+  currentPage++;
+  getBlogPosts();
+});
