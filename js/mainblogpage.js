@@ -2,6 +2,9 @@ const url = "https://www.reisesakte.no//wp-json/wp/v2/posts?_embed&per_page=20";
 
 const createHtmlHere = document.querySelector(".all_posts");
 const morePostsButton = document.querySelector(".more_posts");
+const loader = document.querySelector(".loader");
+
+console.log(loader);
 
 let currentPage = 1;
 const postsPerPage = 10;
@@ -10,6 +13,8 @@ async function getBlogPosts() {
   const response = await fetch(url);
 
   const result = await response.json();
+
+  loader.classList.remove("loader");
 
   const startIndex = (currentPage - 1) * postsPerPage;
   const endIndex = startIndex + postsPerPage;

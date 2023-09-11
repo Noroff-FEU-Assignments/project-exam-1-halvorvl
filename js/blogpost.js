@@ -23,8 +23,6 @@ async function getProductsDetails() {
 
   const content = result.content.rendered;
 
-  console.log(result.content.rendered);
-
   createHtmBlogSpecific.innerHTML = `<div class="single_post">
 
       <h2> ${result.title.rendered} </h2>

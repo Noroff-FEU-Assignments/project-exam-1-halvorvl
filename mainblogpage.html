@@ -8,26 +8,26 @@
   </head>
   <body>
     <header>
+      <a href="index.html"><h1>Reisesakte.no</h1></a>
       <div class="main_image">
         <img src="images/banner_blogg.jpg" alt="" class="banner" />
       </div>
       <nav>
-        <a href="aboutus.html" class="main_menu"> <button>About us</button></a>
-        <a href="contactus.html" class="main_menu">
-          <button>About us</button></a
-        >
-        <a href="mainblogpage.html" class="main_menu">
-          <button>About us</button></a
-        >
+        <ul>
+          <a href="index.html" class="main_menu"> <li>Hjem</li></a>
+          <a href="aboutus.html" class="main_menu"> <li>Om oss</li></a>
+          <a href="contactus.html" class="main_menu"><li>Kontakt oss</li></a>
+          <a href="mainblogpage.html" class="main_menu"><li>Alle inlegg</li></a>
+        </ul>
       </nav>
     </header>
 
-    <main>
+    <main class="main_blogpage">
       <section class="all_posts"></section>
+      <div class="loader"></div>
       <button class="more_posts">Flere Inlegg</button>
     </main>
 
     <script src="js/mainblogpage.js"></script>
-    <script src="js/blogpost.js"></script>
   </body>
 </html>
