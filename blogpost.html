@@ -2,19 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/tvm2eih.css" />
   </head>
   <body>
     <header>
       <a href="index.html"><h1>Reisesakte.no</h1></a>
-      <div class="slider_container">
-        <div class="blog_slider"></div>
+      <div class="main_image">
+        <img src="images/banner_blogg.jpg" alt="" class="banner" />
       </div>
 
       <nav>
-        <ul>
+        <div class="hamburger_menu">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+
+        <ul class="menu">
           <a href="index.html" class="main_menu"> <li>Hjem</li></a>
           <a href="aboutus.html" class="main_menu"> <li>Om oss</li></a>
           <a href="contactus.html" class="main_menu"><li>Kontakt oss</li></a>
@@ -27,5 +34,6 @@
       <div class="loader"></div>
     </main>
     <script src="js/blogpost.js"></script>
+    <script src="js/componets/hamburger_menu.js"></script>
   </body>
 </html>

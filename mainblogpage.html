@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/tvm2eih.css" />
   </head>
   <body>
     <header>
@@ -13,7 +14,13 @@
         <img src="images/banner_blogg.jpg" alt="" class="banner" />
       </div>
       <nav>
-        <ul>
+        <div class="hamburger_menu">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+
+        <ul class="menu">
           <a href="index.html" class="main_menu"> <li>Hjem</li></a>
           <a href="aboutus.html" class="main_menu"> <li>Om oss</li></a>
           <a href="contactus.html" class="main_menu"><li>Kontakt oss</li></a>
@@ -23,11 +30,13 @@
     </header>
 
     <main class="main_blogpage">
+      <h1>Alle tildigere innlegg</h1>
       <section class="all_posts"></section>
       <div class="loader"></div>
       <button class="more_posts">Flere Inlegg</button>
     </main>
 
     <script src="js/mainblogpage.js"></script>
+    <script src="js/componets/hamburger_menu.js"></script>
   </body>
 </html>
