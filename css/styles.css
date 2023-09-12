@@ -3,16 +3,21 @@ body {
   margin: 0px;
 }
 
-h1,
 h2 {
   font-family: "garamond-premier-pro", "Times New Roman", Times, serif;
   text-align: center;
   font-size: 2em;
   margin: 5px;
+
+  padding-top: 10px;
 }
 
 h1 {
+  font-family: "garamond-premier-pro", "Times New Roman", Times, serif;
+  text-align: center;
   color: black;
+  font-size: 3em;
+  margin: 20px;
 }
 
 a {
@@ -51,6 +56,11 @@ li {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.border {
+  margin-top: 5px;
+  border: solid 2px;
 }
 
 header {
@@ -162,7 +172,7 @@ footer {
 
 .h2_for_slider {
   position: relative;
-  bottom: 60px;
+  bottom: 70px;
   background-color: #ddd;
 }
 
@@ -253,16 +263,13 @@ footer {
 
 /*mainblogpage styles*/
 
-.main_blogpage {
-  max-width: 80%;
-  margin-left: 10%;
-}
-
 .more_posts {
   display: block;
 }
 
 .all_posts {
+  max-width: 80%;
+  margin-left: 10%;
   display: grid;
   grid-template-areas:
     "H1                     H1 "
@@ -276,19 +283,9 @@ footer {
 
 /*contact styles*/
 
-.contact_info {
-  grid-area: contact_info;
-}
-.contact_form {
-  grid-area: contact_form;
-}
-
 .contact {
-  display: grid;
-  gap: 10px;
-  grid-template-areas:
-    "H1           H1           H1"
-    "contact_info contact_form contact_form";
+  max-width: 80%;
+  margin-left: 10%;
 }
 
 .contact_info {
@@ -296,6 +293,7 @@ footer {
   color: #f4f6fa;
   padding: 10px;
   text-align: center;
+  margin-bottom: 15px;
 }
 
 .fa-envelope,
@@ -327,19 +325,14 @@ input[type="submit"] {
   font-size: 1.3em;
 }
 
-@media only screen and (min-width: 100px) and (max-width: 599px) {
-  .contact {
-    grid-template-areas:
-      "H1"
-      "contact_form"
-      "contact_info";
-  }
-}
-
 @media only screen and (min-width: 600px) and (max-width: 899px) {
   h1,
   h2 {
     font-size: 1.5em;
+  }
+
+  .h2_for_slider {
+    bottom: 60px;
   }
 
   li {
@@ -443,6 +436,9 @@ input[type="submit"] {
   h1,
   h2 {
     font-size: 1em;
+  }
+  .h2_for_slider {
+    bottom: 50px;
   }
 
   li {
