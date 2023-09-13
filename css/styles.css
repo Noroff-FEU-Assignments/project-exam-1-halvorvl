@@ -60,6 +60,7 @@ li {
 
 .border {
   margin-top: 5px;
+  margin-bottom: 10px;
   border: solid 2px;
 }
 
@@ -107,6 +108,15 @@ footer {
   max-width: 100%;
 }
 
+.overlay {
+  display: none;
+  position: absolute;
+  left: 4%;
+
+  max-width: 90%;
+  border: solid 5px;
+}
+
 .banner {
   max-width: 100%;
 }
@@ -121,7 +131,7 @@ footer {
 
 .blog_slider {
   overflow: hidden;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.1s ease-in-out;
   position: relative;
   text-align: center;
 }
@@ -201,11 +211,11 @@ footer {
   display: flex;
   align-items: center;
   max-width: 80%;
-  text-align: center;
   margin-left: 10%;
 }
 
 .aboutus_image_frontpage {
+  margin-right: 20px;
   max-width: 35%;
   max-height: 100%;
 }
@@ -264,7 +274,10 @@ footer {
 /*mainblogpage styles*/
 
 .more_posts {
-  display: block;
+  position: relative;
+  font-size: 1.5em;
+  margin-left: 42%;
+  margin-bottom: 50px;
 }
 
 .all_posts {
@@ -326,12 +339,16 @@ input[type="submit"] {
 }
 
 @media only screen and (min-width: 600px) and (max-width: 899px) {
-  h1,
   h2 {
     font-size: 1.5em;
   }
 
+  h1 {
+    font-size: 2.5em;
+  }
+
   .h2_for_slider {
+    font-size: 1.2em;
     bottom: 60px;
   }
 
@@ -435,9 +452,11 @@ input[type="submit"] {
 @media only screen and (min-width: 100px) and (max-width: 599px) {
   h1,
   h2 {
-    font-size: 1em;
+    font-size: 1.5em;
   }
+
   .h2_for_slider {
+    font-size: 1.2em;
     bottom: 50px;
   }
 
@@ -483,21 +502,12 @@ input[type="submit"] {
 
   nav {
     min-height: 0px;
-    margin-top: 20px;
+    margin-top: 40px;
   }
 
   .nav_homepage {
     min-height: 0px;
     margin-top: 0px;
-  }
-
-  .hamburger_menu {
-    z-index: 12;
-    display: block;
-    position: relative;
-    left: 41%;
-    margin-top: -15px;
-    padding-bottom: 5px;
   }
 
   .featured_blog_posts_tablet {

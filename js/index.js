@@ -66,7 +66,7 @@ function startAutoSlide() {
   autoSlideInterval = setInterval(() => {
     currentIndex = (currentIndex + 1) % posts.length;
     displayPost(currentIndex);
-  }, 2000);
+  }, 3500);
 }
 
 function displayPosts(startIndex) {
