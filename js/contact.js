@@ -5,11 +5,15 @@ const phone = document.querySelector("#phone");
 const phoneError = document.querySelector("#phoneError");
 const email = document.querySelector("#email");
 const emailError = document.querySelector("#emailError");
+const subject = document.querySelector("#subject");
+const subjectError = document.querySelector("#subjectError");
+const message = document.querySelector("#message");
+const messageError = document.querySelector("#messageError");
 
 function validateForm(event) {
   event.preventDefault();
 
-  if (checkLen(fullName.value, 0) === true) {
+  if (checkLen(fullName.value, 4) === true) {
     fullNameError.style.display = "none";
   } else {
     fullNameError.style.display = "block";
@@ -27,10 +31,24 @@ function validateForm(event) {
     phoneError.style.display = "block";
   }
 
+  if (checkLen(subject.value, 14) === true) {
+    subjectError.style.display = "none";
+  } else {
+    subjectError.style.display = "block";
+  }
+
+  if (checkLen(message.value, 24) === true) {
+    messageError.style.display = "none";
+  } else {
+    messageError.style.display = "block";
+  }
+
   if (
-    (checkLen(fullName.value, 0) === true) &
+    (checkLen(fullName.value, 4) === true) &
     (validateEmail(email.value) === true) &
-    (validatePhone(phone.value) === true)
+    (validatePhone(phone.value) === true) &
+    (checkLen(subject.value, 14) === true) &
+    (checkLen(message.value, 24) === true)
   ) {
     open("contact_confirmation.html", "_self");
   }

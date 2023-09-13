@@ -9,11 +9,6 @@ const params = new URLSearchParams(queryString);
 
 const id = params.get("id");
 
-const images = document.querySelector(".blog_image");
-const bigImage = document.querySelector(".overlay");
-
-console.log(id);
-
 const detailsUrl = `https://www.reisesakte.no//wp-json/wp/v2/posts/${id}?_embed`;
 
 async function getProductsDetails() {

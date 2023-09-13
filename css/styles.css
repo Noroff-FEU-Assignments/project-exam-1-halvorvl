@@ -101,6 +101,10 @@ footer {
   margin-top: 20px;
   padding-right: 30px;
 }
+
+.error-message {
+  color: red;
+}
 .social_madia {
   font-size: 2em;
 }
@@ -309,12 +313,6 @@ footer {
   margin-bottom: 15px;
 }
 
-.fa-envelope,
-.fa-phone,
-.fa-location-dot {
-  font-size: 30px;
-}
-
 .contact_form {
   background-color: #f4f6fa;
   border: solid 2px;
@@ -336,6 +334,14 @@ input[type="submit"] {
   position: relative;
   left: 35%;
   font-size: 1.3em;
+}
+
+#fullNameError,
+#emailError,
+#phoneError,
+#subjectError,
+#messageError {
+  display: none;
 }
 
 @media only screen and (min-width: 600px) and (max-width: 899px) {
