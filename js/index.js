@@ -3,6 +3,7 @@ const createHtmlForStickyPosts = document.querySelector(".sticky_posts");
 const createHtmlForStickyPostsTablet = document.querySelector(
   ".sticky_posts_tablet"
 );
+const loader = document.querySelector(".loader");
 
 const prevBtn = document.querySelector(".prev_post");
 const nextBtn = document.querySelector(".next_post");
@@ -13,17 +14,13 @@ const url = "https://www.reisesakte.no//wp-json/wp/v2/posts?_embed&per_page=30";
 let currentIndex = 0;
 let startIndex = 0;
 let posts = [];
-let stickyPosts = [];
+let stickyPostsResult = [];
 
 async function getBlogPosts() {
   const response = await fetch(url);
   const result = await response.json();
   posts = result;
-
-  for (let i = 0; i < result.length; i++)
-    if (result[i].sticky === true) {
-      stickyPosts = result[i];
-    }
+  stickyPostsResult = result.filter((post) => post.sticky === true);
 
   displayPost(currentIndex);
 
@@ -37,15 +34,14 @@ async function getBlogPosts() {
 }
 
 function displayPost(index) {
-  if (index >= 0 && index < posts.length) {
-    const post = posts[index];
+  if (index >= 0 && index < stickyPostsResult.length) {
+    const post = stickyPostsResult[index];
     const featuredMedia = post._embedded["wp:featuredmedia"][0];
     const imageUrl = featuredMedia.source_url;
 
-    if (post.sticky === true) {
-      const blogPost = document.createElement("div");
-      blogPost.classList.add("blog_post_slider");
-      blogPost.innerHTML = `
+    const blogPost = document.createElement("div");
+    blogPost.classList.add("blog_post_slider");
+    blogPost.innerHTML = `
                <a href="blogpost.html?id=${post.id}">
                 <img class="slider_image" src="${imageUrl}" alt="${post.title.rendered}">
                  
@@ -54,15 +50,14 @@ function displayPost(index) {
                 
             `;
 
-      createHtmlHere.innerHTML = "";
-      createHtmlHere.appendChild(blogPost);
-    }
+    createHtmlHere.innerHTML = "";
+    createHtmlHere.appendChild(blogPost);
   }
 }
 
 function startAutoSlide() {
   autoSlideInterval = setInterval(() => {
-    currentIndex = (currentIndex + 1) % posts.length;
+    currentIndex = (currentIndex + 1) % stickyPostsResult.length;
     displayPost(currentIndex);
   }, 3500);
 }

@@ -20,6 +20,8 @@ async function getProductsDetails() {
 
   console.log(result);
 
+  document.title = `Reisesakte.no - ${result.title.rendered}`;
+
   const single_post = document.createElement("div");
   single_post.classList.add("single_post");
 
