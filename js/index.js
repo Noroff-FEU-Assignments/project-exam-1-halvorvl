@@ -8,7 +8,7 @@ const prevBtn = document.querySelector(".prev_post");
 const nextBtn = document.querySelector(".next_post");
 const prevBtnTablet = document.querySelector(".prev_post_tablet");
 const nextBtnTablet = document.querySelector(".next_post_tablet");
-const url = "https://www.reisesakte.no//wp-json/wp/v2/posts?_embed&per_page=20";
+const url = "https://www.reisesakte.no//wp-json/wp/v2/posts?_embed&per_page=30";
 
 let currentIndex = 0;
 let startIndex = 0;
@@ -16,26 +16,24 @@ let posts = [];
 let stickyPosts = [];
 
 async function getBlogPosts() {
-  try {
-    const response = await fetch(url);
-    const result = await response.json();
-    posts = result;
+  const response = await fetch(url);
+  const result = await response.json();
+  posts = result;
 
-    for (let i = 0; i < result.length; i++)
-      if (result[i].sticky === true) {
-        stickyPosts = result[i];
-      }
+  for (let i = 0; i < result.length; i++)
+    if (result[i].sticky === true) {
+      stickyPosts = result[i];
+    }
 
-    console.log(stickyPosts);
+  displayPost(currentIndex);
 
-    displayPost(currentIndex);
+  displayPosts(startIndex);
 
-    displayPosts(startIndex);
+  displayPostsTablet(startIndex);
 
-    displayPostsTablet(startIndex);
+  startAutoSlide();
 
-    startAutoSlide();
-  } catch (error) {}
+  loader.classList.remove("loader");
 }
 
 function displayPost(index) {
