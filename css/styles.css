@@ -125,6 +125,8 @@ footer {
   max-width: 100%;
 }
 
+/*homepage  styles*/
+
 .slider_container {
   display: flex;
   flex-wrap: wrap;
@@ -264,7 +266,6 @@ footer {
 .prev_post_tablet {
   display: none;
 }
-/*tablet  styles*/
 
 /*about us styles*/
 
