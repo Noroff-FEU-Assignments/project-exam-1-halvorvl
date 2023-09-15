@@ -11,14 +11,12 @@ const id = params.get("id");
 
 const detailsUrl = `https://www.reisesakte.no//wp-json/wp/v2/posts/${id}?_embed`;
 
-async function getProductsDetails() {
+async function getPostsById() {
   const response = await fetch(detailsUrl);
 
   const result = await response.json();
 
   createHtmBlogSpecific.innerHTML = "";
-
-  console.log(result);
 
   document.title = `Reisesakte.no - ${result.title.rendered}`;
 
@@ -46,14 +44,12 @@ async function getProductsDetails() {
   blogImage.addEventListener("click", function () {
     event.stopPropagation();
     overlayImage.style.display = "flex";
-    console.log("Overlay clicked!");
 
     document.body.addEventListener("click", bodyClick);
   });
 
   const bodyClick = function () {
     overlayImage.style.display = "none";
-    console.log("Body clicked!");
 
     document.body.removeEventListener("click", bodyClick);
   };
@@ -61,4 +57,4 @@ async function getProductsDetails() {
   createHtmBlogSpecific.appendChild(single_post);
 }
 
-getProductsDetails();
+getPostsById();

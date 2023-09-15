@@ -22,7 +22,7 @@ async function getBlogPosts() {
   posts = result;
   stickyPostsResult = result.filter((post) => post.sticky === true);
 
-  displayPost(currentIndex);
+  displayFeaturedPost(currentIndex);
 
   displayPosts(startIndex);
 
@@ -33,7 +33,7 @@ async function getBlogPosts() {
   loader.classList.remove("loader");
 }
 
-function displayPost(index) {
+function displayFeaturedPost(index) {
   if (index >= 0 && index < stickyPostsResult.length) {
     const post = stickyPostsResult[index];
     const featuredMedia = post._embedded["wp:featuredmedia"][0];
@@ -58,8 +58,8 @@ function displayPost(index) {
 function startAutoSlide() {
   autoSlideInterval = setInterval(() => {
     currentIndex = (currentIndex + 1) % stickyPostsResult.length;
-    displayPost(currentIndex);
-  }, 3500);
+    displayFeaturedPost(currentIndex);
+  }, 5000);
 }
 
 function displayPosts(startIndex) {
@@ -72,7 +72,7 @@ function displayPosts(startIndex) {
     const imageUrl = featuredMedia.media_details.sizes.medium.source_url;
 
     const blogPost = document.createElement("div");
-    blogPost.classList.add("featured_blog_posts");
+    blogPost.classList.add("blog_posts");
     blogPost.innerHTML = `
                 <a href="blogpost.html?id=${post.id}">
                 <img class="slider_image_newest" src="${imageUrl}" alt="${post.title.rendered}">
@@ -107,7 +107,7 @@ function displayPostsTablet(startIndex) {
     const imageUrl = featuredMedia.media_details.sizes.medium.source_url;
 
     const blogPost = document.createElement("div");
-    blogPost.classList.add("featured_blog_posts_tablet");
+    blogPost.classList.add("blog_posts_tablet");
     blogPost.innerHTML = `
                 <a href="blogpost.html?id=${post.id}">
                 <img class="slider_image_newest" src="${imageUrl}" alt="${post.title.rendered}">

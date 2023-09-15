@@ -4,8 +4,6 @@ const createHtmlHere = document.querySelector(".all_posts");
 const morePostsButton = document.querySelector(".more_posts");
 const loader = document.querySelector(".loader");
 
-console.log(loader);
-
 let currentPage = 1;
 const postsPerPage = 10;
 
@@ -35,7 +33,6 @@ async function getBlogPosts() {
  </div>`;
 
     createHtmlHere.insertAdjacentHTML("beforeend", postHTML);
-    console.log(result);
   }
 
   if (endIndex < result.length) {
