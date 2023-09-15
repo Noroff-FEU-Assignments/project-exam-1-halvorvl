@@ -24,12 +24,15 @@ async function getBlogPosts() {
     const excerpt = post.excerpt.rendered;
     const image = post._embedded["wp:featuredmedia"]["0"].source_url;
     const postHTML = `<div class="single_post">
- <a href="blogpost.html?id=${result[i].id}" >
+ 
       <h2> ${title} </h2>
       <img class="blog_image"
       src="${image}" alt="${title}>
       <p class="exerpt"> ${excerpt} </p>
-       
+      <a href="blogpost.html?id=${result[i].id}" >
+      <button class="les_mer" aria-label="Les hele innlegget" role="button"> 
+      Les videre
+      </button>
       </a>
  </div>`;
 

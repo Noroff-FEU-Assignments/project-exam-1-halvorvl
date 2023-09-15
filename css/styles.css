@@ -278,6 +278,12 @@ footer {
 
 /*mainblogpage styles*/
 
+.les_mer {
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 5px;
+}
+
 .more_posts {
   position: relative;
   font-size: 1.5em;
