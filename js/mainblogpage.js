@@ -3,6 +3,7 @@ const url = "https://www.reisesakte.no//wp-json/wp/v2/posts?_embed&per_page=20";
 const createHtmlHere = document.querySelector(".all_posts");
 const morePostsButton = document.querySelector(".more_posts");
 const loader = document.querySelector(".loader");
+const hideContent = document.querySelectorAll(".more-link");
 
 let currentPage = 1;
 const postsPerPage = 10;
@@ -26,7 +27,7 @@ async function getBlogPosts() {
  <a href="blogpost.html?id=${result[i].id}" >
       <h2> ${title} </h2>
       <img class="blog_image"
-      src="${image}"/>
+      src="${image}" alt="${title}>
       <p class="exerpt"> ${excerpt} </p>
        
       </a>
@@ -41,6 +42,10 @@ async function getBlogPosts() {
     morePostsButton.style.display = "none";
   }
 }
+
+hideContent.forEach((element) => {
+  element.setAttribute("aria-hidden", "true");
+});
 
 getBlogPosts();
 

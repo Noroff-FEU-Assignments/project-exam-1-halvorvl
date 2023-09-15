@@ -5,9 +5,9 @@ const phone = document.querySelector("#phone");
 const phoneError = document.querySelector("#phoneError");
 const email = document.querySelector("#email");
 const emailError = document.querySelector("#emailError");
-const subject = document.querySelector("#subject");
+const subject = document.querySelector("#emne");
 const subjectError = document.querySelector("#subjectError");
-const message = document.querySelector("#message");
+const message = document.querySelector("#melding");
 const messageError = document.querySelector("#messageError");
 
 function validateForm(event) {
