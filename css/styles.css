@@ -81,6 +81,10 @@ nav {
   margin-top: -50px;
 }
 
+.current_page {
+  color: #bf173e;
+}
+
 .hamburger_menu {
   display: none;
 }
