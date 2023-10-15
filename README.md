@@ -42,8 +42,6 @@ I am more then happy to se people contribute to the project, but please follow t
 
 ## Contact
 
-This is where you can leave your social links for people to contact you, such as a LinkedIn profile or Twitter link e.g.
-
 [My Facebook page](https://www.facebook.com/halvor.lindrupsen)
 
 [My Web page](https://beamish-haupia-57a779.netlify.app/)
